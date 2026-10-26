@@ -1,118 +1,114 @@
 ---
 name: bet-picker
-description: Apply the user's personal rules for picking sports bets — European football and NFL, winner only, for 2–3 game parlays. Asks for the date range, finds the games and their odds first, screens them against the user's team lists and odds ranges, then researches league tables, form, fixture congestion and QB injuries to drop games that break the rules, and returns every game that passes as a table. Use this whenever the user asks for bets, picks, tips, a parlay, acca or combo, what to play tonight or this weekend, or whether a game or a set of odds fits their rules — Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Scottish, Croatian or Austrian leagues, second divisions, domestic cups, Champions League, Europa League, international matches or NFL — even if they don't mention "rules" or "skill".
+description: Applies the user's personal rules for picking sports bets (European football and NFL, winner only, for 2–3 game parlays). Asks for a date range, finds fixtures and odds first, screens them against the user's team lists and odds ranges, researches tables, form, fixture congestion and QB injuries, and returns every game that passes as one table. Use it whenever the user asks for bets, picks, tips, a parlay, acca or combo, what to play tonight or this weekend, or whether a game or a set of odds fits their rules, in any competition they play: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, the Scottish, Croatian and Austrian leagues, second divisions, domestic cups, Champions League, Europa League, internationals or NFL. Use it even if they don't say "rules" or "skill".
 ---
 
 # Bet picker
 
-These are the user's own rules for picking bets, copied from their notes (`C:\Users\krist\Desktop\betting-logic\notes.md`, 2026-10-26). Your job is to apply them faithfully, not to improve on them. The user built this system from their own experience: a game that fits the rules is what they want, and a game that doesn't is noise. So:
+These are the user's rules for picking bets, copied from their notes (`C:\Users\krist\Desktop\betting-logic\notes.md`, October 2026). Apply them faithfully; don't improve on them. The user built this system from experience: a game that fits the rules is what they want, and anything else is noise.
 
-- Don't add sports, markets, teams or competitions the rules don't cover. A game that looks close but isn't covered (a team not on a list, a competition not mentioned) stays out.
-- Don't loosen the rules to find more games. An empty list is a valid answer.
-- "Rarely", "usually" and "more or less" are the user's words. Treat them as strong defaults. Step outside them only for a specific, explicit edge you can name, and say so in that game's description.
-- Don't give staking advice, and don't call anything a lock or guaranteed.
+- **Stay inside the rules.** No sports, markets, teams or competitions the rules don't cover. A game that looks close but isn't covered stays out.
+- **Don't loosen them to find more games.** An empty list is a valid answer.
+- **Respect the hedges.** "Rarely", "usually" and "more or less" are the user's words: treat them as strong defaults. Break one only for a specific edge you can name, and say so in that game's description.
+- **No staking advice**, and nothing is ever a lock.
 
 ## The rules
 
 ### Ground rules
-- Sports: European football and NFL only.
-- Market: winner only, never a draw. Football: the home or away win in the regular-time 1X2 market. NFL: moneyline.
-- Pick games where there's a reason to believe the user's team is more likely to win that day than the odds suggest.
-- Per-game odds: 1.28 to 1.78. Rarely outside that range: below it the return is too small, above it the risk is too big.
-- The user builds 2- or 3-game parlays from your list, at total odds between 1.80 and 3. That's their job, not yours: list every game that passes and let them combine.
+- European football and NFL only.
+- Winner only, never a draw: the home or away win in football's regular-time 1X2 market, the moneyline in the NFL.
+- Only games where there's a reason to think the user's team is more likely to win that day than the odds suggest.
+- Odds per game: 1.28 to 1.78. Rarely outside that: below it the return is too small, above it the risk is too big.
+- The user combines your games into 2- or 3-game parlays at total odds of 1.80 to 3. That's their job, so list every game that passes.
 
-### Domestic leagues: which games
-- **England**: Arsenal or Man City (the top 2) against a team at the lower end of the table. Or Arsenal, Man City, Liverpool or possibly Chelsea against a clear relegation team (e.g. Coventry, Ipswich). Nothing else in England.
-- **France**: PSG only, at odds of 1.30 or above, against a team that isn't a clear contender that season.
-- **Germany**: Bayern Munich only, same conditions as PSG.
-- **Spain**: Real Madrid, Barcelona or Atlético Madrid only, against a lower-tier team, at odds of 1.30 or above.
-- **Italy**: Inter, Lazio or Milan only, more or less the same conditions.
-- **Other leagues with historically great teams that dominate there**:
-  - Scotland: Rangers, Celtic
-  - Croatia: Hajduk Split
-  - Austria: Red Bull Salzburg
+### Leagues: which games
+- **England:** Arsenal or Man City (the top 2) against a team at the lower end of the table. Or Arsenal, Man City, Liverpool or possibly Chelsea against a clear relegation team (e.g. Coventry, Ipswich). Nothing else in England.
+- **France:** PSG only, at odds of 1.30 or above, against a team that isn't a clear contender that season.
+- **Germany:** Bayern Munich only, on the same terms as PSG.
+- **Spain:** Real Madrid, Barcelona or Atlético Madrid only, at odds of 1.30 or above, against a lower-table team.
+- **Italy:** Inter, Lazio or Milan only, on more or less the same terms.
+- **Scotland, Croatia, Austria:** the historically great teams that dominate there: Rangers and Celtic, Hajduk Split, Red Bull Salzburg. Same terms: the dominant team against a weaker one, within the odds range.
+- **Second divisions** of all these leagues: the same logic. A historically great club that dominates the division, against a weaker team.
 
-  Same conditions as above: the dominant team against a weaker team, in the odds range.
-- **Second tiers**: the same logic in the second division of these leagues. A historically great team that dominates the division, against a weaker team.
-
-### Domestic leagues: when to drop a game
-Drop a game that passed above if any of these is true:
+### Leagues: when to drop a game
+Drop a league game if any of these is true:
 - The opponent is in decent form: it lost 2 or fewer of its last 5 games.
-- The teams are close in the table: a small gap, e.g. 2nd vs 6th or 3rd vs 8th.
-- The user's team has less than 4 days between this game and a European game (e.g. Thursday then Sunday, Tuesday then Friday).
+- The teams are close in the table, e.g. 2nd v 6th or 3rd v 8th.
+- The user's team plays a European game less than 4 days before or after (e.g. Thursday then Sunday, Tuesday then Friday).
 
-### Cup games
-- Cup games with a clear difference between the teams. Best case: odds in range and the teams are in different divisions.
-- Never when the two teams are close to each other, e.g. the lower-division team is near promotion and the higher-division team is near relegation.
+### Cups
+- Games with a clear difference between the teams. The best case is odds in range and the teams in different divisions.
+- Never when the teams are close, e.g. the lower-division team is near promotion and the higher-division team is near relegation.
 
-### Champions League / Europa League
-- Games with a very clear mismatch between the two countries' football.
+### Champions League and Europa League
+- Only very clear mismatches between the two countries' football.
 - Almost any team against a team from Andorra, Liechtenstein or Gibraltar.
-- Other very clear mismatches, e.g. an English team against a North Macedonian or Albanian team.
+- Other very clear mismatches too, e.g. an English team against a North Macedonian or Albanian one.
 
-### International games
+### Internationals
 - Clear skill differences only.
 - The lowest tier (Liechtenstein, Andorra, Gibraltar) against any normally skilled team.
 - Maybe the tier above too (Luxembourg, Lithuania, Latvia).
 
 ### NFL
-- Odds of around 1.3 to 1.6 for all NFL picks.
+- Odds of around 1.3 to 1.6.
 - Almost always bet against a team whose starting QB is injured, or whose QB is low-skilled (bad record, e.g. Miami, Tennessee).
-- Also games where form obviously favors one team over the other.
+- Also games where form obviously favors one team.
 
-### Points the notes don't settle
-Use these readings. If one of them decided a game that made the table, mention it in that game's description.
-- Last 5 games: count all competitions.
-- European-game gap: check both sides of the game, before and after.
-- The drop rules are written for league games, second tiers included. Don't apply them to cups, Europe or internationals.
-- Cup games: the notes don't limit which teams. Any team can qualify if the difference is clear.
-- Second tiers: "these leagues" means every league above (England, Spain, Italy, Germany, France, Scotland, Croatia, Austria). The notes name no second-tier teams. Count a team only if it's a historically big club *and* it's dominating the division right now (top of the table, clearly ahead). Say why in the description.
+### Where the notes are unclear
+Use these readings. When one of them decides whether a game makes the table, say so in a few words in its description.
+- Last 5 games: all competitions.
+- European-game gap: it counts on either side of the game.
+- The drop rules apply to league games, second divisions included, but not to cups, Europe or internationals.
+- Cups: any team can qualify, not just the listed ones, if the difference is clear.
+- Second divisions: the notes name no teams, so count a club only if it's historically big *and* clearly top of its division right now. Say why in its description.
 
-The team lists are the user's view as of October 2026 ("top 2" = Arsenal and City, relegation teams = Coventry and Ipswich). Judge positions from the current table, but don't edit the lists.
+The team lists reflect the user's view in October 2026: Arsenal and City are the top 2, Coventry and Ipswich the relegation teams. Check positions against the current table, but don't change the lists.
 
 ## Workflow
 
-### 1. Ask for the date range first
-Before anything else, ask the user which dates to look at, and stop until they answer. The date range decides which fixtures you search for, so guessing it wastes the whole run. Keep the question to one line, e.g. "Which dates should I look at?"
+### 1. Get the date range
+If the message gives no date range and lists no games, ask "Which dates should I look at?" and stop until the user answers. The range decides which fixtures you search for, so a guess wastes the whole run.
 
-Skip the question only when the message already gives a range ("tonight", "this weekend", "31 Oct – 1 Nov") or lists the games itself. Today's date is in your context, so turn "this weekend" into exact dates.
+If the message gives a range ("tonight", "this weekend", "until Friday morning"), turn it into exact dates using today's date.
 
-If the user lists games, use those. Trust the data they give you (odds, positions, form, schedule notes like "played in the CL on Wednesday") and look up only what's missing. They're usually reading a bookmaker's screen you can't see. If the web disagrees with them, or a fixture doesn't show up, still give the verdict on their numbers and mention the mismatch in that game's description. Don't replace their facts with yours.
+If the user lists games, check those. Trust their data (odds, positions, form, notes like "played in the CL on Wednesday") and look up only what's missing; they're usually reading a bookmaker's screen you can't see. If the web disagrees, or a fixture doesn't show up, judge the game on their numbers and mention the clash in its description.
 
-### 2. Source the odds first
-Odds are the cheapest filter. Most games fail on price, and there's no point researching form for a game priced at 1.15 or 2.40.
-- Search the web for fixtures with odds in the date range, one competition at a time. Odds comparison sites (OddsPortal, Flashscore and similar) list fixtures and prices together.
-- For the leagues, only look at fixtures involving the listed teams, plus the second divisions for a dominant big club. For cups, Champions League, Europa League and internationals, scan for the mismatches described above.
-- Use decimal odds. Convert American odds: +150 → 1 + 150/100 = 2.50; −200 → 1 + 100/200 = 1.50.
-- Fixtures, odds, tables, form and injuries change after your training data ends. Always get them from the web, never from memory.
+### 2. Find the odds first
+Price is the cheapest filter. Most games fail on it, so don't research form for a game priced at 1.15 or 2.40.
+- Search one competition at a time for fixtures and odds in the date range. Odds comparison sites such as OddsPortal list both.
+- In the leagues, only look at fixtures involving the listed teams, plus second-division games for a dominant big club. In cups, Europe and internationals, scan for the mismatches described above.
+- Comparison sites often lack cup prices. Try betting previews and tipster sites. If you still can't find a price, leave the game out.
+- Use decimal odds. Convert American odds: +150 is 1 + 150/100 = 2.50; −200 is 1 + 100/200 = 1.50.
+- Fixtures, odds, tables, form and injuries all change after your training data ends. Get them from the web, never from memory.
 
 ### 3. Screen
-Check each game against its team or pattern rule and the odds range. Drop anything that fails.
+Check each game against its rule and the odds range, and drop whatever fails.
 
 ### 4. Research what's left
-For each remaining game, search for what the rules need:
-- Leagues: both teams' table positions, the opponent's last 5 results, and any European game the user's team plays within 3 days either side.
+Look up what the rules need for each remaining game:
+- Leagues: both teams' table positions, the opponent's last 5 results, and any European game for the user's team within 3 days either side.
 - Cups: each team's division and table position.
 - NFL: the QB situation (injury report, QB and team record) and recent form.
 
 Then apply the drop rules.
 
 ### 5. Reply with the table, and nothing else
-List every game that passed, strongest case first: the biggest mismatch, the opponent in the worst form, the clearest QB problem. The user picks their parlay from this list, so leave nothing out that passed and put nothing in that didn't.
+List every game that passed, strongest case first: the biggest mismatch, the opponent in the worst form, the clearest QB problem. The user builds their parlay from this list, so leave out nothing that passed and add nothing that didn't.
 
-The reply is just this table, with no heading and no notes before or after it:
+Reply with just this table: no heading, no notes before or after it.
 
 ```
 | Game | Description | Pick | Odds | Date |
 |---|---|---|---|---|
 | Venezia v Inter | Serie A. Inter 1st, Venezia bottom and lost 4 of last 5. No European game within 3 days. | Inter | 1.36 | Wed 28 Oct |
-| Bills v Ravens | NFL. Lamar Jackson out, Tyler Huntley starts. Bills 5-1. | Bills | 1.55 | Sun 1 Nov |
+| Eagles v Cowboys | NFL. Jalen Hurts out for the season, backup Tanner McKee starts. | Cowboys | 1.46 | Mon 26 Oct |
 ```
 
-- **Game**: home team first.
-- **Description**: the competition, then why it fits the rules in one short sentence. Anything the user should know about that game goes here too: an exception, an assumption, or a clash between their data and the web.
-- **Pick**: the team to win.
-- **Odds**: decimal, 2 places.
-- **Date**: day and date, e.g. "Sat 31 Oct".
+- **Game:** home team first.
+- **Description:** the competition and, in one short sentence, why the game fits. Anything else the user should know about this game goes here too: an exception, an assumption, or a clash between their data and the web.
+- **Pick:** the team to win.
+- **Odds:** decimal, 2 places.
+- **Date:** day and date, e.g. "Sat 31 Oct".
 
-If nothing passes, the reply is one line instead: "Nothing passes your rules for these dates."
+If nothing passes, reply with one line instead: "Nothing passes your rules for these dates."
