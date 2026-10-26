@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: weekend-picks-from-web
+expected_outcome: |
+  The range is given, so it doesn't ask. Finds the weekend's fixtures and odds on the web
+  first, screens them against the user's team lists (incl. Rangers, Celtic, Hajduk, Salzburg
+  and dominant second-tier clubs) and odds ranges, researches the survivors, and replies with
+  only a table (Game, Description, Pick, Odds, Date) of every game that passes, or one line
+  saying nothing passes.

@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: screens-pasted-games
+expected_outcome: |
+  Games are listed, so it doesn't ask for dates. Uses the user's data even where the web
+  disagrees. Arsenal fails on odds, PSG v Lens on form/contender, Real on the CL game 3 days
+  before, Napoli isn't on the list. Bayern 1.33, Celtic 1.48, Inter 1.42 and Chiefs 1.45 pass.
+  Replies with only a table of those four.
