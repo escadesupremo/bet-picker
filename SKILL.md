@@ -17,6 +17,8 @@ These are the user's rules for picking bets, copied from their notes (`C:\Users\
 ### Ground rules
 - European football and NFL only.
 - Winner only, never a draw: the home or away win in football's regular-time 1X2 market, the moneyline in the NFL.
+- The team you pick must be at least a better-known second-division club, such as a former top-flight side. A lesser-known second-division pick: rarely. A pick from below the second division: never. The opponent can come from any level.
+- In lower-level games, the team you pick must also be in good form: drop the game if it lost 3 or more of its last 5.
 - Only games where there's a reason to think the user's team is more likely to win that day than the odds suggest.
 - Odds per game: 1.28 to 1.78. Rarely outside that: below it the return is too small, above it the risk is too big.
 - The user combines your games into 2- or 3-game parlays at total odds of 1.80 to 3. That's their job, so list every game that passes.
@@ -60,7 +62,9 @@ Use these readings. When one of them decides whether a game makes the table, say
 - Last 5 games: all competitions.
 - European-game gap: it counts on either side of the game.
 - The drop rules apply to league games, second divisions included, but not to cups, Europe or internationals.
-- Cups: any team can qualify, not just the listed ones, if the difference is clear.
+- Cups: any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.
+- Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
+- Team level: "better-known" is a judgement call. Count former top-flight clubs and big names; when it's borderline, say so in the description. The rule is about club divisions, so it doesn't apply to internationals.
 - Second divisions: the notes name no teams, so count a club only if it's historically big *and* clearly top of its division right now. Say why in its description.
 
 The team lists reflect the user's view in October 2026: Arsenal and City are the top 2, Coventry and Ipswich the relegation teams. Check positions against the current table, but don't change the lists.
@@ -77,7 +81,7 @@ If the user lists games, check those. Trust their data (odds, positions, form, n
 ### 2. Find the odds first
 Price is the cheapest filter. Most games fail on it, so don't research form for a game priced at 1.15 or 2.40.
 - Search one competition at a time for fixtures and odds in the date range. Odds comparison sites such as OddsPortal list both.
-- In the leagues, only look at fixtures involving the listed teams, plus second-division games for a dominant big club. In cups, Europe and internationals, scan for the mismatches described above.
+- In the leagues, only look at fixtures involving the listed teams, plus second-division games for a dominant big club. In cups, Europe and internationals, scan for the mismatches described above. Skip any cup tie where both teams are below the second division straight away, without looking up its odds: there's no team you could pick.
 - Comparison sites often lack cup prices. Try betting previews and tipster sites. If you still can't find a price, leave the game out.
 - Use decimal odds. Convert American odds: +150 is 1 + 150/100 = 2.50; −200 is 1 + 100/200 = 1.50.
 - Fixtures, odds, tables, form and injuries all change after your training data ends. Get them from the web, never from memory.
@@ -89,6 +93,7 @@ Check each game against its rule and the odds range, and drop whatever fails.
 Look up what the rules need for each remaining game:
 - Leagues: both teams' table positions, the opponent's last 5 results, and any European game for the user's team within 3 days either side.
 - Cups: each team's division and table position.
+- Lower-level games (cups and second divisions): the last 5 results of the team you'd pick.
 - NFL: the QB situation (injury report, QB and team record) and recent form.
 
 Then apply the drop rules.
