@@ -101,7 +101,7 @@ Then apply the drop rules.
 ### 5. Reply with the table, and nothing else
 List every game that passed, strongest case first: the biggest mismatch, the opponent in the worst form, the clearest QB problem. The user builds their parlay from this list, so leave out nothing that passed and add nothing that didn't.
 
-Reply with just this table: no heading, no notes before or after it.
+Reply with this table, then the cost sentence from step 6, and nothing else: no heading, no notes.
 
 ```
 | Game | Description | Pick | Odds | Date |
@@ -116,4 +116,7 @@ Reply with just this table: no heading, no notes before or after it.
 - **Odds:** decimal, 2 places.
 - **Date:** day and date, e.g. "Sat 31 Oct".
 
-If nothing passes, reply with one line instead: "Nothing passes your rules for these dates."
+If nothing passes, reply with one line instead: "Nothing passes your rules for these dates." The cost sentence still follows it.
+
+### 6. Close with the cost
+Once the analysis is done, run `python scripts/run_cost.py` from this skill's base directory and put the sentence it prints on its own line under the table. It adds up the real token usage of every model call since the skill was invoked, from this session's transcript, and prices it at Anthropic API rates. Don't estimate the numbers yourself: if the script fails, say in one line that the cost couldn't be measured.

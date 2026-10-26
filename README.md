@@ -9,6 +9,8 @@ You give it a date range. It finds the fixtures and odds on the web and screens 
 | Venezia v Inter | Serie A. Inter 1st, Venezia bottom and lost at Genoa on Sunday. Inter's next European game is 6 days later. | Inter | 1.36 | Wed 28 Oct |
 | Eagles v Cowboys | NFL. Jalen Hurts is out for the season, so backup Tanner McKee starts. | Cowboys | 1.46 | Mon 26 Oct |
 
+Under the table, one sentence gives the tokens the run used and what they would cost at Anthropic API rates. `scripts/run_cost.py` reads these from the Claude Code session transcript.
+
 The rules are personal and opinionated. They're all in [SKILL.md](SKILL.md), so read them before you use the skill, and edit them to match your own.
 
 ## Install
