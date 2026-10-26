@@ -72,7 +72,12 @@ The team lists reflect the user's view in October 2026: Arsenal and City are the
 ## Workflow
 
 ### 1. Get the date range
-If the message gives no date range and lists no games, ask "Which dates should I look at?" and stop until the user answers. The range decides which fixtures you search for, so a guess wastes the whole run.
+If the message gives no date range and lists no games, introduce the skill and ask for the range in two short lines, then stop until the user answers:
+
+> This skill helps you find high-confidence football and NFL odds to complement your parlay.
+> Which dates should I look at?
+
+The range decides which fixtures you search for, so a guess wastes the whole run.
 
 If the message gives a range ("tonight", "this weekend", "until Friday morning"), turn it into exact dates using today's date.
 
