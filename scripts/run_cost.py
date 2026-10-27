@@ -38,7 +38,11 @@ def is_invocation(entry):
     message = entry.get("message") or {}
     content = message.get("content")
     if entry.get("type") == "user":
-        text = content if isinstance(content, str) else json.dumps(content)
+        # Only what the user typed: tool results can quote the tag too.
+        if isinstance(content, str):
+            text = content
+        else:
+            text = " ".join(b.get("text", "") for b in content or [] if isinstance(b, dict) and b.get("type") == "text")
         return "<command-name>/bet-picker</command-name>" in text
     if entry.get("type") == "assistant" and isinstance(content, list):
         return any(
