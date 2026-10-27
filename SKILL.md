@@ -31,8 +31,7 @@ The user plays these countries' leagues and no others: England, Spain, France, G
 - **Spain:** Real Madrid, Barcelona or Atlético Madrid only, at odds of 1.30 or above, against a lower-table team.
 - **Italy:** Inter, Lazio or Milan only, on more or less the same terms.
 - **Portugal:** Porto, Sporting or Benfica, the user's usual picks there, and sometimes Braga as a fourth. Same terms: against a weaker team, within the odds range.
-- **Scotland, Croatia, Austria:** the historically great teams that dominate there: Rangers and Celtic, Hajduk Split, Red Bull Salzburg. Same terms: the dominant team against a weaker one, within the odds range.
-- **Hungary, Denmark, Poland, Greece, Serbia:** the same logic. The historically great teams that dominate there, against a weaker team, within the odds range.
+- **Scotland, Croatia, Austria, Hungary, Denmark, Poland, Greece, Serbia:** the historically great teams that dominate there: Rangers and Celtic, Hajduk Split, Red Bull Salzburg, Ferencváros, FC Copenhagen and Midtjylland, Legia Warsaw, AEK Athens (not Olympiacos or Panathinaikos), Red Star Belgrade. Same terms: the dominant team against a weaker one, within the odds range.
 - **Second divisions** of all these leagues: the same logic. A historically great club that dominates the division, against a weaker team.
 
 ### Leagues: when to drop a game
@@ -65,9 +64,7 @@ Use these readings. When one of them decides whether a game makes the table, say
 - Last 5 games: all competitions.
 - European-game gap: it counts on either side of the game.
 - The drop rules apply to league games, second divisions included, but not to cups, Europe or internationals.
-- Cups: the domestic cups of the countries in the league list, league cups included (e.g. Portugal's Taça da Liga). Any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.
-- Hungary, Denmark, Poland, Greece, Serbia: the notes name no teams. Count a club only if it's historically one of that league's dominant teams, and say which in its description.
-- Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
+- Cups: the domestic cups of the countries in the league list, league cups included (e.g. Portugal's Taça da Liga). Any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.- Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
 - Team level: "better-known" is a judgement call. Count former top-flight clubs and big names; when it's borderline, say so in the description. The rule is about club divisions, so it doesn't apply to internationals.
 - Second divisions: the notes name no teams, so count a club only if it's historically big *and* clearly top of its division right now. Say why in its description.
 
