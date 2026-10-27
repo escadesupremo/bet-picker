@@ -1,6 +1,6 @@
 ---
 name: bet-picker
-description: Applies the user's personal rules for picking sports bets (European football and NFL, winner only, for 2–3 game parlays). Asks for a date range, finds fixtures and odds first, screens them against the user's team lists and odds ranges, researches tables, form, fixture congestion and QB injuries, and returns every game that passes as one table. Use it whenever the user asks for bets, picks, tips, a parlay, acca or combo, what to play tonight or this weekend, or whether a game or a set of odds fits their rules, in any competition they play: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, the Scottish, Croatian and Austrian leagues, second divisions, domestic cups, Champions League, Europa League, internationals or NFL. Use it even if they don't say "rules" or "skill".
+description: Applies the user's personal rules for picking sports bets (European football and NFL, winner only, for 2–3 game parlays). Asks for a date range, finds fixtures and odds first, screens them against the user's team lists and odds ranges, researches tables, form, fixture congestion and QB injuries, and returns every game that passes as one table. Use it whenever the user asks for bets, picks, tips, a parlay, acca or combo, what to play tonight or this weekend, or whether a game or a set of odds fits their rules, in any competition they play: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, the Portuguese, Scottish, Croatian, Austrian, Hungarian, Danish, Polish, Greek and Serbian leagues, second divisions, domestic cups, Champions League, Europa League, internationals or NFL. Use it even if they don't say "rules" or "skill".
 ---
 
 # Bet picker
@@ -24,12 +24,15 @@ These are the user's rules for picking bets, copied from their notes (`C:\Users\
 - The user combines your games into 2- or 3-game parlays at total odds of 1.80 to 3. That's their job, so list every game that passes.
 
 ### Leagues: which games
+The user plays these countries' leagues and no others: England, Spain, France, Germany, Italy, Portugal, Scotland, Croatia, Austria, Hungary, Denmark, Poland, Greece and Serbia.
 - **England:** Arsenal or Man City (the top 2) against a team at the lower end of the table. Or Arsenal, Man City, Liverpool or possibly Chelsea against a clear relegation team (e.g. Coventry, Ipswich). Nothing else in England.
 - **France:** PSG only, at odds of 1.30 or above, against a team that isn't a clear contender that season.
 - **Germany:** Bayern Munich only, on the same terms as PSG.
 - **Spain:** Real Madrid, Barcelona or Atlético Madrid only, at odds of 1.30 or above, against a lower-table team.
 - **Italy:** Inter, Lazio or Milan only, on more or less the same terms.
+- **Portugal:** Porto, Sporting or Benfica, the user's usual picks there, and sometimes Braga as a fourth. Same terms: against a weaker team, within the odds range.
 - **Scotland, Croatia, Austria:** the historically great teams that dominate there: Rangers and Celtic, Hajduk Split, Red Bull Salzburg. Same terms: the dominant team against a weaker one, within the odds range.
+- **Hungary, Denmark, Poland, Greece, Serbia:** the same logic. The historically great teams that dominate there, against a weaker team, within the odds range.
 - **Second divisions** of all these leagues: the same logic. A historically great club that dominates the division, against a weaker team.
 
 ### Leagues: when to drop a game
@@ -62,7 +65,8 @@ Use these readings. When one of them decides whether a game makes the table, say
 - Last 5 games: all competitions.
 - European-game gap: it counts on either side of the game.
 - The drop rules apply to league games, second divisions included, but not to cups, Europe or internationals.
-- Cups: any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.
+- Cups: the domestic cups of the countries in the league list, league cups included (e.g. Portugal's Taça da Liga). Any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.
+- Hungary, Denmark, Poland, Greece, Serbia: the notes name no teams. Count a club only if it's historically one of that league's dominant teams, and say which in its description.
 - Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
 - Team level: "better-known" is a judgement call. Count former top-flight clubs and big names; when it's borderline, say so in the description. The rule is about club divisions, so it doesn't apply to internationals.
 - Second divisions: the notes name no teams, so count a club only if it's historically big *and* clearly top of its division right now. Say why in its description.
@@ -86,7 +90,7 @@ If the user lists games, check those. Trust their data (odds, positions, form, n
 ### 2. Find the odds first
 Price is the cheapest filter. Most games fail on it, so don't research form for a game priced at 1.15 or 2.40.
 - Search one competition at a time for fixtures and odds in the date range. Odds comparison sites such as OddsPortal list both.
-- In the leagues, only look at fixtures involving the listed teams, plus second-division games for a dominant big club. In cups, Europe and internationals, scan for the mismatches described above. Skip any cup tie where both teams are below the second division straight away, without looking up its odds: there's no team you could pick.
+- In the leagues, only look at fixtures involving the listed teams, plus second-division games for a dominant big club. In cups, check every domestic cup and league cup of the league-list countries that has games in the range. In cups, Europe and internationals, scan for the mismatches described above. Skip any cup tie where both teams are below the second division straight away, without looking up its odds: there's no team you could pick.
 - Comparison sites often lack cup prices. Try betting previews and tipster sites. If you still can't find a price, leave the game out.
 - Use decimal odds. Convert American odds: +150 is 1 + 150/100 = 2.50; −200 is 1 + 100/200 = 1.50.
 - Fixtures, odds, tables, form and injuries all change after your training data ends. Get them from the web, never from memory.
