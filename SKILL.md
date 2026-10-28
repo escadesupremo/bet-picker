@@ -8,7 +8,7 @@ description: Applies the user's personal rules for picking sports bets (European
 These are the user's rules for picking bets, copied from their notes (`C:\Users\krist\Desktop\betting-logic\notes.md`, October 2026). Apply them faithfully; don't improve on them. The user built this system from experience: a game that fits the rules is what they want, and anything else is noise.
 
 - **Stay inside the rules.** No sports, markets, teams or competitions the rules don't cover. A game that looks close but isn't covered stays out.
-- **Don't loosen them to find more games.** An empty list is a valid answer.
+- **Don't loosen them to find more games.** An empty list is a valid answer. The one exception is marginal calls for the named teams, below.
 - **Respect the hedges.** "Rarely", "usually" and "more or less" are the user's words: treat them as strong defaults. Break one only for a specific edge you can name, and say so in that game's description.
 - **No staking advice**, and nothing is ever a lock.
 
@@ -44,6 +44,12 @@ Drop a league game if any of these is true:
 - Games with a clear difference between the teams. The best case is odds in range and the teams in different divisions.
 - Never when the teams are close, e.g. the lower-division team is near promotion and the higher-division team is near relegation.
 
+### Marginal calls with the named teams
+When a game with one of the teams named in the league lists above fails only on a judgement call that could go either way, include it anyway. Start its description with "Marginal:" and say what made it marginal. Example: Porto (1st) v Académico de Viseu (6th) in the Taça da Liga, same division.
+- Judgement calls: whether the teams are close in the table, whether there's a clear difference between them, whether the opponent is weak or low enough in the table.
+- Rules with a number still drop the game: the odds range, the last-5 counts (opponent lost 2 or fewer; your pick lost 3 or more in a lower-level game) and the European-game gap.
+- A clear fail isn't marginal: two title rivals (e.g. Man City 1st v Brighton 3rd), or a league game that matches the notes' own drop examples (2nd v 6th, 3rd v 8th).
+
 ### Champions League and Europa League
 - Only very clear mismatches between the two countries' football.
 - Almost any team against a team from Andorra, Liechtenstein or Gibraltar.
@@ -64,7 +70,8 @@ Use these readings. When one of them decides whether a game makes the table, say
 - Last 5 games: all competitions.
 - European-game gap: it counts on either side of the game.
 - The drop rules apply to league games, second divisions included, but not to cups, Europe or internationals.
-- Cups: the domestic cups of the countries in the league list, league cups included (e.g. Portugal's Taça da Liga). Any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.- Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
+- Cups: the domestic cups of the countries in the league list, league cups included (e.g. Portugal's Taça da Liga). Any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.
+- Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
 - Team level: "better-known" is a judgement call. Count former top-flight clubs and big names; when it's borderline, say so in the description. The rule is about club divisions, so it doesn't apply to internationals.
 - Second divisions: the notes name no teams, so count a club only if it's historically big *and* clearly top of its division right now. Say why in its description.
 
