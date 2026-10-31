@@ -18,10 +18,15 @@ These are the user's rules for picking bets, copied from their notes (`C:\Users\
 - European football and NFL only.
 - Winner only, never a draw: the home or away win in football's regular-time 1X2 market, the moneyline in the NFL.
 - The team you pick must be at least a better-known second-division club, such as a former top-flight side. A lesser-known second-division pick: rarely. A pick from below the second division: never. The opponent can come from any level.
-- In lower-level games, the team you pick must also be in good form: drop the game if it lost 3 or more of its last 5.
 - Only games where there's a reason to think the user's team is more likely to win that day than the odds suggest.
 - Odds per game: 1.28 to 1.78. Rarely outside that: below it the return is too small, above it the risk is too big.
 - The user combines your games into 2- or 3-game parlays at total odds of 1.80 to 3. That's their job, so list every game that passes.
+
+### Form: last 5 games
+In every football game, check both teams' last 5 results.
+- Good form means at least 2 wins and at most 2 losses, which always adds up to at least 7 points out of 15 (3 for a win, 1 for a draw). Few losses aren't enough on their own: W D D D L has only 1 loss, but just 1 win and 6 points, so it isn't good form.
+- Drop the game if the team you pick isn't in good form.
+- The opponent's form never drops a game. Give both teams' records in the description, e.g. "Last 5: Inter 4W 1D 0L, Venezia 1W 0D 4L."
 
 ### Leagues: which games
 The user plays these countries' leagues and no others: England, Spain, France, Germany, Italy, Portugal, Scotland, Croatia, Austria, Hungary, Denmark, Poland, Greece and Serbia.
@@ -35,10 +40,9 @@ The user plays these countries' leagues and no others: England, Spain, France, G
 - **Second divisions** of all these leagues: the same logic. A historically great club that dominates the division, against a weaker team.
 
 ### Leagues: when to drop a game
-Drop a league game if any of these is true:
-- The opponent is in decent form: it lost 2 or fewer of its last 5 games.
+Drop a league game if either of these is true:
 - The teams are close in the table, e.g. 2nd v 6th or 3rd v 8th.
-- The user's team plays a European game less than 4 days before or after (e.g. Thursday then Sunday, Tuesday then Friday).
+- The user's team played a European game less than 4 days before (e.g. Thursday then Sunday, Tuesday then Friday). Only the game before counts: a European game after the league game, however close, doesn't drop it.
 
 ### Cups
 - Games with a clear difference between the teams. The best case is odds in range and the teams in different divisions.
@@ -47,7 +51,7 @@ Drop a league game if any of these is true:
 ### Marginal calls with the named teams
 When a game with one of the teams named in the league lists above fails only on a judgement call that could go either way, include it anyway. Start its description with "Marginal:" and say what made it marginal. Example: Porto (1st) v Académico de Viseu (6th) in the Taça da Liga, same division.
 - Judgement calls: whether the teams are close in the table, whether there's a clear difference between them, whether the opponent is weak or low enough in the table.
-- Rules with a number still drop the game: the odds range, the last-5 counts (opponent lost 2 or fewer; your pick lost 3 or more in a lower-level game) and the European-game gap.
+- Rules with a number still drop the game: the odds range, the form test for your pick and the European-game gap.
 - A clear fail isn't marginal: two title rivals (e.g. Man City 1st v Brighton 3rd), or a league game that matches the notes' own drop examples (2nd v 6th, 3rd v 8th).
 
 ### Champions League and Europa League
@@ -68,10 +72,8 @@ When a game with one of the teams named in the league lists above fails only on 
 ### Where the notes are unclear
 Use these readings. When one of them decides whether a game makes the table, say so in a few words in its description.
 - Last 5 games: all competitions.
-- European-game gap: it counts on either side of the game.
-- The drop rules apply to league games, second divisions included, but not to cups, Europe or internationals.
+- The league drop rules apply to league games, second divisions included, but not to cups, Europe or internationals. The form rule applies to every football game.
 - Cups: the domestic cups of the countries in the league list, league cups included (e.g. Portugal's Taça da Liga). Any team can qualify, not just the listed ones, if the difference is clear and the team you pick meets the team-level rule.
-- Lower-level games: any game where either team is from the second division or below. That covers cup ties against lower-division sides and second-division league games.
 - Team level: "better-known" is a judgement call. Count former top-flight clubs and big names; when it's borderline, say so in the description. The rule is about club divisions, so it doesn't apply to internationals.
 - Second divisions: the notes name no teams, so count a club only if it's historically big *and* clearly top of its division right now. Say why in its description.
 
@@ -104,9 +106,9 @@ Check each game against its rule and the odds range, and drop whatever fails.
 
 ### 4. Research what's left
 Look up what the rules need for each remaining game:
-- Leagues: both teams' table positions, the opponent's last 5 results, and any European game for the user's team within 3 days either side.
+- Every football game: both teams' last 5 results.
+- Leagues: both teams' table positions, and any European game the user's team played in the 3 days before.
 - Cups: each team's division and table position.
-- Lower-level games (cups and second divisions): the last 5 results of the team you'd pick.
 - NFL: the QB situation (injury report, QB and team record) and recent form.
 
 Then apply the drop rules.
@@ -119,12 +121,12 @@ Reply with this table, then the cost sentence from step 6, and nothing else: no 
 ```
 | Game | Description | Pick | Odds | Date |
 |---|---|---|---|---|
-| Venezia v Inter | Serie A. Inter 1st, Venezia bottom and lost 4 of last 5. No European game within 3 days. | Inter | 1.36 | Wed 28 Oct |
+| Venezia v Inter | Serie A. Inter 1st, Venezia bottom. Last 5: Inter 4W 1D 0L, Venezia 1W 0D 4L. No European game in the 3 days before. | Inter | 1.36 | Wed 28 Oct |
 | Eagles v Cowboys | NFL. Jalen Hurts out for the season, backup Tanner McKee starts. | Cowboys | 1.46 | Mon 26 Oct |
 ```
 
 - **Game:** home team first.
-- **Description:** the competition and, in one short sentence, why the game fits. Anything else the user should know about this game goes here too: an exception, an assumption, or a clash between their data and the web.
+- **Description:** the competition and, in one short sentence, why the game fits. For football, both teams' last-5 records. Anything else the user should know about this game goes here too: an exception, an assumption, or a clash between their data and the web.
 - **Pick:** the team to win.
 - **Odds:** decimal, 2 places.
 - **Date:** day and date, e.g. "Sat 31 Oct".

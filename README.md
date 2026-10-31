@@ -2,7 +2,7 @@
 
 A [Claude Code](https://claude.com/claude-code) skill that applies one person's rules for picking sports bets: European football and NFL, winner only, built for 2–3 game parlays.
 
-You give it a date range. It finds the fixtures and odds on the web and screens them against the rules: team lists, odds ranges, league table gaps, opponent form, fixture congestion around European games, and NFL quarterback injuries. Then it returns every game that passes in one table:
+You give it a date range. It finds the fixtures and odds on the web and screens them against the rules: team lists, odds ranges, league table gaps, both teams' form, fixture congestion around European games, and NFL quarterback injuries. Then it returns every game that passes in one table:
 
 | Game | Description | Pick | Odds | Date |
 |---|---|---|---|---|
